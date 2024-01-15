@@ -1,4 +1,11 @@
 export interface Fish {
     id: number;
-    name: string;
+    _id: string;
+    specie: string;
+    english: string;
+    latin:  string;
+    danish: string; 
+    german:  string;
+    french: string;
+    norwegian: string;
   }

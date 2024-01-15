@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Fish } from '../fish';
+import { FISHES } from '../mock-fishes';
 
 @Component({
   selector: 'app-fishes',
@@ -7,9 +8,12 @@ import { Fish } from '../fish';
   styleUrls: ['./fishes.component.css']
 })
 export class FishesComponent {
-  fish: Fish = {
-    id: 1,
-    name: 'Eel'
-  };
+
+  fishes = FISHES;
+  selectedFish?: Fish;
+
+  onSelect(fish: Fish): void {
+    this.selectedFish = fish;
+  }
 
 }
