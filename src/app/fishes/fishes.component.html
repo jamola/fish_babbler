@@ -1,18 +1,13 @@
 <h2>My Fishes</h2>
+
 <ul class="fishes">
-    <li *ngFor="let fish of fishes">
-    <button [class.selected]="fish === selectedFish" type="button" (click)="onSelect(fish)">
+  <li *ngFor="let fish of fishes">
+      <button [class.selected]="fish === selectedFish" 
+        type="button" (click)="onSelect(fish)">
       <span class="badge">{{fish.id}}</span>
       <span class="specie">{{fish.specie}}</span>
     </button>
   </li>
 </ul>
 
-<div *ngIf="selectedFish">
-    <h2>{{selectedFish.specie | uppercase}} Details</h2>
-    <div>id: {{selectedFish.id}}</div>
-    <div>
-        <label for="fish-specie">Fish specie: </label>
-        <input id="fish-specie" [(ngModel)]="selectedFish.specie" placeholder="specie">
-    </div>
-</div>
+<app-fish-detail [fish]="selectedFish"></app-fish-detail>

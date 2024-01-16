@@ -7,6 +7,7 @@ import { FISHES } from '../mock-fishes';
   templateUrl: './fishes.component.html',
   styleUrls: ['./fishes.component.css']
 })
+
 export class FishesComponent {
 
   fishes = FISHES;
@@ -15,5 +16,4 @@ export class FishesComponent {
   onSelect(fish: Fish): void {
     this.selectedFish = fish;
   }
-
 }
