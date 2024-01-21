@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Fish } from '../fish';
 import { FishService } from '../fish.service';
 
 @Component({
-  selector: 'app-fishes',
-  templateUrl: './fishes.component.html',
-  styleUrls: ['./fishes.component.css']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: [ './dashboard.component.css' ]
 })
-export class FishesComponent implements OnInit {
+export class DashboardComponent implements OnInit {
   fishes: Fish[] = [];
 
   constructor(private fishService: FishService) { }
@@ -19,6 +18,6 @@ export class FishesComponent implements OnInit {
 
   getFishes(): void {
     this.fishService.getFishes()
-    .subscribe(fishes => this.fishes = fishes);
+      .subscribe(fishes => this.fishes = fishes.slice(2, 4));
   }
 }

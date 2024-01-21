@@ -2,12 +2,8 @@
 
 <ul class="fishes">
   <li *ngFor="let fish of fishes">
-      <button [class.selected]="fish === selectedFish" 
-        type="button" (click)="onSelect(fish)">
-      <span class="badge">{{fish.id}}</span>
-      <span class="specie">{{fish.specie}}</span>
-    </button>
+    <a routerLink="/detail/{{fish.id}}">
+      <span class="badge">{{fish.id}}</span> {{fish.specie}}
+    </a>
   </li>
 </ul>
-
-<app-fish-detail [fish]="selectedFish"></app-fish-detail>
