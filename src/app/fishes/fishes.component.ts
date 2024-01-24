@@ -21,4 +21,19 @@ export class FishesComponent implements OnInit {
     this.fishService.getFishes()
     .subscribe(fishes => this.fishes = fishes);
   }
+
+  add(specie: string): void {
+    specie = specie.trim();
+    if (!specie) { return; }
+    this.fishService.addFish({ specie } as Fish)
+      .subscribe(fish => {
+        this.fishes.push(fish);
+      });
+  }
+
+  delete(fish: Fish): void {
+    this.fishes = this.fishes.filter(f => f !== fish);
+    this.fishService.deleteFish(fish.id).subscribe();
+  }
+  
 }

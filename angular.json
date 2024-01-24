@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "fish_babbler:build:production"
+              "buildTarget": "fish_babbler:build:production"
             },
             "development": {
-              "browserTarget": "fish_babbler:build:development"
+              "buildTarget": "fish_babbler:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "fish_babbler:build"
+            "buildTarget": "fish_babbler:build"
           }
         },
         "test": {

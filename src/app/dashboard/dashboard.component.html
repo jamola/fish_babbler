@@ -1,7 +1,9 @@
 <h2>Top Fishes</h2>
 <div class="fishes-menu">
   <a *ngFor="let fish of fishes"
-    routerLink="/detail/{{fish.id}}">
-    {{fish.specie}}
+      routerLink="/detail/{{fish.id}}">
+      {{fish.specie}}
   </a>
 </div>
+
+<app-fish-search></app-fish-search>

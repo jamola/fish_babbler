@@ -18,18 +18,25 @@ export class FishDetailComponent implements OnInit {
     private fishService: FishService,
     private location: Location
   ) {}
-  
+
   ngOnInit(): void {
     this.getFish();
   }
 
   getFish(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+    const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
     this.fishService.getFish(id)
       .subscribe(fish => this.fish = fish);
   }
 
   goBack(): void {
     this.location.back();
+  }
+
+  save(): void {
+    if (this.fish) {
+      this.fishService.updateFish(this.fish)
+        .subscribe(() => this.goBack());
+    }
   }
 }

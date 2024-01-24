@@ -1,9 +1,21 @@
 <h2>My Fishes</h2>
 
+<div>
+  <label for="new-fish">Fish specie: </label>
+  <input id="new-fish" #fishSpecie />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button type="button" class="add-button" (click)="add(fishSpecie.value); fishSpecie.value=''">
+    Add fish
+  </button>
+</div>
+
 <ul class="fishes">
   <li *ngFor="let fish of fishes">
     <a routerLink="/detail/{{fish.id}}">
       <span class="badge">{{fish.id}}</span> {{fish.specie}}
     </a>
+    <button type="button" class="delete" title="delete fish"
+      (click)="delete(fish)">x</button>
   </li>
 </ul>

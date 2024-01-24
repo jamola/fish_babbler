@@ -1,5 +1,4 @@
 <div *ngIf="fish">
-
   <h2>{{fish.specie | uppercase}} Details</h2>
   <div><span>id: </span>{{fish.id}}</div>
   <div>
@@ -7,4 +6,5 @@
     <input id="fish-specie" [(ngModel)]="fish.specie" placeholder="Fish specie">
   </div>
   <button type="button" (click)="goBack()">go back</button>
+  <button type="button" (click)="save()">save</button>
 </div>
