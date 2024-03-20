@@ -1,5 +1,5 @@
 # fish_babbler
-Application for finding translations of fish names
+Application for getting different translations of fish names
 
 ## What the project does
 The project helps to translate local fish names in different countries into your preferred language.
